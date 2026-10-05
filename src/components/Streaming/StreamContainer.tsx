@@ -4,6 +4,7 @@ import VideoPlayer from './VideoPlayer';
 import StreamHeader from './StreamHeader';
 import ViewerCount from './ViewerCount';
 import StreamControls from './StreamControls';
+import ChatWindow from '../Chat/ChatWindow';
 import { useWebRTC } from '../../hooks/useWebRTC';
 import { useSocket } from '../../hooks/useSocket';
 import { useAppSelector, useAppDispatch } from '../../store/store';
@@ -17,6 +18,7 @@ export default function StreamContainer() {
   const { localStream, remoteStream, error: webrtcError } = useWebRTC(socket, streamId || '');
 
   const activeStream = useAppSelector(state => state.stream.activeStream);
+  const userId = useAppSelector(state => state.auth.user?.userId || '');
 
   const [isMuted, setIsMuted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -177,12 +179,14 @@ export default function StreamContainer() {
             </div>
           </div>
 
-          {/* Sidebar - Chat Coming Soon */}
+          {/* Chat Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-dark-900 border border-dark-700 rounded-lg p-4 h-96 flex items-center justify-center">
-              <p className="text-gray-400 text-center">
-                💬 Live chat coming soon in Phase 5C
-              </p>
+            <div className="bg-dark-900 border border-dark-700 rounded-lg overflow-hidden h-96">
+              <ChatWindow
+                streamId={streamId || ''}
+                userId={userId}
+                creatorId={activeStream?.creatorProfileId}
+              />
             </div>
           </div>
         </div>

@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@floating-ui/react": "^0.27.20",
+    "@headlessui/react": "^2.2.10",
+    "@hookform/resolvers": "^5.9.1",
+    "@reduxjs/toolkit": "^2.13.0",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.3",
@@ -11,11 +15,24 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "axios": "^1.20.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "js-cookie": "^3.0.8",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "react-hook-form": "^7.89.0",
+    "react-icons": "^5.7.0",
+    "react-redux": "^9.3.0",
+    "react-router-dom": "^7.18.4",
     "react-scripts": "5.0.1",
+    "simple-peer": "^9.11.1",
+    "socket.io-client": "^4.8.4",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webrtc-adapter": "^9.0.6",
+    "zod": "^4.6.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,5 +57,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/simple-peer": "^9.11.9",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.19"
   }
 }
